@@ -113,7 +113,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-top: 50px; */
   text-align: center;
 }
 .form {
@@ -203,13 +202,11 @@ p {
   max-height: 90%;
 }
 
-/* Стилі для контейнера зображень */
 .image-container {
   position: relative;
   display: inline-block;
 }
 
-/* Стилі для лоудера */
 .loader {
   display: none;
   position: absolute;
