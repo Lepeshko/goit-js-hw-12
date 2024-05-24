@@ -1,19 +1,26 @@
-'use strict';
-export async function fetchImages(searchData) {
-  const searchParams = new URLSearchParams({
-    key: '44048092-3090edf6b3c3e0216bf005362',
-    q: searchData,
-    image_type: 'photo',
-    orientation: 'horizontal',
-    safesearch: 'true',
-  });
+import axios from 'axios';
+import iziToast from 'izitoast';
 
-  const url = `https://pixabay.com/api/?${searchParams.toString()}`;
+const API_KEY = '44048092-3090edf6b3c3e0216bf005362';
+const BASE_URL = 'https://pixabay.com/api/';
 
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch images. Status: ${response.status}`);
+export const fetchImages = async (query, page = 1, perPage = 15) => {
+  try {
+    const response = await axios.get(BASE_URL, {
+      params: {
+        key: API_KEY,
+        q: query,
+        image_type: 'photo',
+        per_page: perPage,
+        page: page,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    iziToast.error({
+      title: 'Error',
+      message: 'Failed to fetch images. Please try again later.',
+    });
+    throw error;
   }
-
-  return response.json();
-}
+};
