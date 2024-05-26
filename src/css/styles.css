@@ -140,6 +140,13 @@ section {
   background-color: #6c8cff;
 }
 
+.search-input {
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  text-align: center;
+}
+
 .gallery-image {
   width: 360px;
   height: 200px;

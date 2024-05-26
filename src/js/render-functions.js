@@ -1,11 +1,8 @@
-'use strict';
-// Описаний у документації
+// Файл render-functions.js
+
 import iziToast from 'izitoast';
-// Додатковий імпорт стилів
 import 'izitoast/dist/css/iziToast.min.css';
-// Описаний у документації
 import SimpleLightbox from 'simplelightbox';
-// Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export function displayImages(images, gallery) {
@@ -21,11 +18,11 @@ export function displayImages(images, gallery) {
                         <li><p class="info-name">Views</p><p>${image.views}</p></li>
                         <li><p class="info-name">Comments</p><p>${image.comments}</p></li>
                         <li><p class="info-name">Downloads</p><p>${image.downloads}</p></li>
-                        </ul>
+                    </ul>
                 </div>
             </a>
         </li>
-    `
+      `
     )
     .join('');
   gallery.insertAdjacentHTML('beforeend', markup);
@@ -41,7 +38,10 @@ export function displayToast(message, type) {
   iziToast[type]({
     message,
     messageColor: 'white',
-    position: 'topRight',
+    position: 'bottomRight', // Можна використовувати 'bottomRight', 'bottomLeft' або 'bottomCenter'
     backgroundColor: 'red',
   });
 }
+
+// -------------------
+// -----------------------
