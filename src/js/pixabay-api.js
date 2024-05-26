@@ -35,5 +35,3 @@ class PixabayAPI {
 
 const pixabayAPI = new PixabayAPI();
 export const fetchImages = pixabayAPI.fetchImages.bind(pixabayAPI);
-
-// -----------------------

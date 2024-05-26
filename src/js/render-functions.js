@@ -38,10 +38,7 @@ export function displayToast(message, type) {
   iziToast[type]({
     message,
     messageColor: 'white',
-    position: 'bottomRight', // Можна використовувати 'bottomRight', 'bottomLeft' або 'bottomCenter'
+    position: 'bottomRight', // Для місцерозташування вспливаючого вікна. Можна використовувати 'bottomRight', 'bottomLeft' або 'bottomCenter'
     backgroundColor: 'red',
   });
 }
-
-// -------------------
-// -----------------------
